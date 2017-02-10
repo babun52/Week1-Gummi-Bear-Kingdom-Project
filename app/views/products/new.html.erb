@@ -1,0 +1,20 @@
+<h1>New Product</h1>
+
+<% if @product.errors.any? %>
+  <h3>Errors. Please try again:</h3>
+  <ul>
+    <% @product.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= form_for @product do |f|%>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :cost %>
+  <%= f.text_field :cost %>
+  <%= f.label :made_in %>
+  <%= f.text_field :made_in %>
+  <%= f.submit %>
+<% end %>
